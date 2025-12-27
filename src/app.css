@@ -1,0 +1,158 @@
+:root {
+  /* Functional Primary */
+  --brand-cinnamon: #BA5B3F;
+  --brand-blue: #708090;
+
+  /* Neutrals for Readability */
+  --bg-main: #FFFFFF;
+  --bg-subtle: #F9F7F2;
+  --text-main: #2D2D2D;
+  --text-muted: #57606A;
+
+  /* UI Feedback */
+  --action-hover: #9E4A32;
+  --border-light: #E1E4E8;
+
+  /* Status Colors */
+  --success-bg: #d4edda;
+  --success-border: #28a745;
+  --success-text: #155724;
+
+  --warning-bg: #fff3cd;
+  --warning-border: #ff6b00;
+  --warning-text: #856404;
+
+  --pending-bg: #ffe4a0;
+
+  --error-bg: #f8d7da;
+  --error-border: #dc3545;
+  --error-text: #721c24;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-subtle);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile-first responsive container */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Card component */
+.card {
+  background: var(--bg-main);
+  border: 2px solid var(--border-light);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 8px;
+  color: var(--brand-cinnamon);
+}
+
+/* Button styles */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn {
+  background: var(--bg-subtle);
+  border: 2px solid var(--border-light);
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  width: 100%;
+  color: var(--text-main);
+}
+
+.btn:hover {
+  background: var(--brand-cinnamon);
+  color: white;
+  border-color: var(--brand-cinnamon);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--brand-cinnamon);
+  color: white;
+  border-color: var(--brand-cinnamon);
+}
+
+.btn-primary:hover {
+  background: var(--action-hover);
+  border-color: var(--action-hover);
+}
+
+.btn-secondary {
+  background: var(--brand-blue);
+  color: white;
+  border-color: var(--brand-blue);
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+/* Input styles */
+input[type="number"] {
+  padding: 8px 12px;
+  border: 2px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--text-main);
+  width: 100%;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--brand-cinnamon);
+}
+
+/* Touch targets for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--brand-cinnamon);
+  outline-offset: 2px;
+}
+
+/* Loading state */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}

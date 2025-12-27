@@ -13,6 +13,9 @@
 		"lint": "eslint . && prettier --check .",
 		"format": "prettier --write ."
 	},
+	"dependencies": {
+		"@supabase/supabase-js": "^2.39.1"
+	},
 	"devDependencies": {
 		"@eslint/compat": "^1.4.0",
 		"@eslint/js": "^9.39.1",
