@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\static"
   ],
-  "SelectedNode": "\\wireframes",
+  "SelectedNode": "\\src\\app.html",
   "PreviewInSolutionExplorer": false
 }
