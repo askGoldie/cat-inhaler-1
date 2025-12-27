@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Toggle Interaction</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f5f5;
+            padding: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .wireframe-label {
+            background: #000;
+            color: #fff;
+            padding: 8px 16px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .header {
+            text-align: center;
+            padding: 24px 16px;
+            background: #ddd;
+            margin-bottom: 16px;
+            border: 2px dashed #999;
+        }
+        .cat-image-placeholder {
+            width: 80px;
+            height: 80px;
+            background: #ccc;
+            margin: 0 auto 12px;
+            border: 2px dashed #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .card {
+            background: #fff;
+            border: 2px solid #999;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #999;
+            padding-bottom: 8px;
+        }
+        .status-banner {
+            background: #ffe4a0;
+            border: 2px solid #999;
+            padding: 16px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .dose-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border: 2px solid #999;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        .dose-item.completed {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        .interaction-arrow {
+            position: absolute;
+            right: -100px;
+            font-size: 32px;
+            color: #ff0000;
+        }
+        .interaction-note {
+            position: absolute;
+            right: -380px;
+            background: #fff;
+            border: 3px solid #ff0000;
+            padding: 12px;
+            width: 280px;
+            font-size: 12px;
+        }
+        .dose-info {
+            flex: 1;
+        }
+        .dose-label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .dose-status {
+            color: #666;
+            font-size: 14px;
+        }
+        .dose-status.completed-time {
+            color: #155724;
+            font-weight: 500;
+        }
+        .checkbox {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #999;
+            border-radius: 50%;
+            position: relative;
+        }
+        .checkbox.checked {
+            background: #28a745;
+            border-color: #28a745;
+        }
+        .checkbox.checked::after {
+            content: '✓';
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .tap-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 4px dashed #ff0000;
+            border-radius: 50%;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+        }
+        .button {
+            background: #ddd;
+            border: 2px solid #999;
+            padding: 12px 24px;
+            font-size: 14px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .puff-counter {
+            text-align: center;
+            padding: 32px 0;
+        }
+        .puff-number {
+            font-size: 72px;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .puff-number.changing {
+            color: #ff6b00;
+        }
+        .puff-label {
+            color: #666;
+            margin-top: 8px;
+        }
+        .puff-change {
+            background: #fff3cd;
+            border: 2px dashed #ff6b00;
+            padding: 8px;
+            margin-top: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: #856404;
+        }
+        .note {
+            background: #ffffcc;
+            border: 2px dashed #999;
+            padding: 12px;
+            margin-top: 24px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-label">INTERACTION: Toggle Dose Completion (Puff Counter Logic)</div>
+
+    <div class="header">
+        <div class="cat-image-placeholder">🐱 Brad's Photo</div>
+        <h1>Brad's Asthma Tracker</h1>
+        <div>Friday, December 26, 2025</div>
+    </div>
+
+    <div class="status-banner">
+        Doses pending
+    </div>
+
+    <div class="card">
+        <div class="card-title">Daily Doses</div>
+        
+        <div class="dose-item completed" style="margin-bottom: 80px;">
+            <div class="dose-info">
+                <div class="dose-label">Morning Dose</div>
+                <div class="dose-status completed-time">Completed at 8:03 AM</div>
+            </div>
+            <div class="checkbox checked">
+                <div class="tap-indicator"></div>
+            </div>
+            <div class="interaction-arrow">→</div>
+            <div class="interaction-note">
+                <strong>TAP TO UNCHECK:</strong><br>
+                • Checkbox unchecks<br>
+                • Status: "Not completed"<br>
+                • Background: white<br>
+                • Puff counter: 119 → 120 (+1)<br>
+                • Syncs to other device
+            </div>
+        </div>
+
+        <div class="dose-item" style="margin-bottom: 80px;">
+            <div class="dose-info">
+                <div class="dose-label">Evening Dose</div>
+                <div class="dose-status">Not completed</div>
+            </div>
+            <div class="checkbox">
+                <div class="tap-indicator"></div>
+            </div>
+            <div class="interaction-arrow">→</div>
+            <div class="interaction-note">
+                <strong>TAP TO CHECK:</strong><br>
+                • Checkbox checks with ✓<br>
+                • Status: "Completed at [time]"<br>
+                • Background: green<br>
+                • Puff counter: 120 → 119 (-1)<br>
+                • Syncs to other device
+            </div>
+        </div>
+
+        <button class="button">Reset Day</button>
+    </div>
+
+    <div class="card">
+        <div class="puff-counter">
+            <div class="puff-number changing">119</div>
+            <div class="puff-label">puffs remaining</div>
+            <div class="puff-change">
+                ↕️ Changes based on dose status
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>INTERACTION LOGIC:</strong><br><br>
+        
+        <strong>CHECKING a dose (uncompleted → completed):</strong><br>
+        1. Mark as completed with timestamp<br>
+        2. Subtract 1 from puff counter<br>
+        3. Update UI (green background, checkmark)<br>
+        4. Sync to database (other user sees immediately)<br><br>
+        
+        <strong>UNCHECKING a dose (completed → uncompleted):</strong><br>
+        1. Mark as not completed<br>
+        2. Add 1 back to puff counter<br>
+        3. Update UI (white background, empty checkbox)<br>
+        4. Sync to database (other user sees immediately)<br><br>
+        
+        This toggle behavior is critical for accurate puff counting when doses are given by mistake or need correction.
+    </div>
+</body>
+</html>

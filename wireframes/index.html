@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brad's Asthma Tracker - Wireframe Overview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f5f5;
+            padding: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 32px;
+        }
+        .section {
+            background: #fff;
+            border: 2px solid #999;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #999;
+            padding-bottom: 8px;
+        }
+        h3 {
+            font-size: 18px;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+        ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .wireframe-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .wireframe-card {
+            border: 2px solid #999;
+            padding: 16px;
+            background: #fafafa;
+        }
+        .wireframe-card h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .wireframe-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        .wireframe-card a {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 2px solid #0056b3;
+            font-weight: bold;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .feature-box {
+            border: 2px solid #999;
+            padding: 16px;
+            background: #fff9e6;
+        }
+        .feature-box h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #856404;
+        }
+        .highlight {
+            background: #fff3cd;
+            border: 2px solid #ff6b00;
+            padding: 16px;
+            margin: 16px 0;
+            font-weight: bold;
+        }
+        .flow-diagram {
+            background: #e9ecef;
+            border: 2px dashed #999;
+            padding: 24px;
+            margin: 16px 0;
+            font-family: monospace;
+            white-space: pre;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+        th, td {
+            border: 2px solid #999;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #e9ecef;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐱 Brad's Asthma Tracker - Wireframe Documentation</h1>
+    <div class="subtitle">Low-Fidelity Wireframes & Interaction Specifications</div>
+
+    <div class="section">
+        <h2>📋 Project Overview</h2>
+        <p><strong>Purpose:</strong> Multi-device web app to coordinate cat inhaler administration between two users</p>
+        <p><strong>Target Users:</strong> Two people caring for Brad the Abyssinian cat</p>
+        <p><strong>Primary Use Case:</strong> Prevent duplicate doses and accurately track inhaler effectiveness</p>
+        
+        <div class="highlight">
+            ⚠️ CRITICAL REQUIREMENT: Puff counter accuracy is paramount - this determines when the inhaler becomes ineffective
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Core Features</h2>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <h4>1. Real-time Sync</h4>
+                <ul>
+                    <li>Two devices access same data</li>
+                    <li>Immediate updates visible to both users</li>
+                    <li>No device sharing required</li>
+                </ul>
+            </div>
+            <div class="feature-box">
+                <h4>2. Daily Dose Tracking</h4>
+                <ul>
+                    <li>Morning & evening doses</li>
+                    <li>One-tap completion</li>
+                    <li>Timestamps shown</li>
+                    <li>Auto-reset at midnight</li>
+                </ul>
+            </div>
+            <div class="feature-box">
+                <h4>3. Puff Counter</h4>
+                <ul>
+                    <li>Starts at 120 (configurable)</li>
+                    <li>Decrements with each dose/extra puff</li>
+                    <li>Adds back when unchecked/deleted</li>
+                    <li>Warning at ≤20 puffs</li>
+                </ul>
+            </div>
+            <div class="feature-box">
+                <h4>4. Extra Puff Logging</h4>
+                <ul>
+                    <li>Log wasted puffs</li>
+                    <li>Timestamped entries</li>
+                    <li>Delete capability</li>
+                    <li>Most recent first</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🖼️ Wireframe States</h2>
+        <p>These wireframes cover all critical application states and interactions:</p>
+        
+        <div class="wireframe-list">
+            <div class="wireframe-card">
+                <h4>1. Default State</h4>
+                <p>Starting state with no doses completed. Full inhaler (120 puffs).</p>
+                <a href="wireframe-default.html" target="_blank">View Wireframe →</a>
+            </div>
+
+            <div class="wireframe-card">
+                <h4>2. Morning Completed</h4>
+                <p>Shows morning dose marked complete with timestamp. Puff counter at 119.</p>
+                <a href="wireframe-morning-completed.html" target="_blank">View Wireframe →</a>
+            </div>
+
+            <div class="wireframe-card">
+                <h4>3. Both Completed</h4>
+                <p>Both daily doses completed. Green status banner. Puff counter at 118.</p>
+                <a href="wireframe-both-completed.html" target="_blank">View Wireframe →</a>
+            </div>
+
+            <div class="wireframe-card">
+                <h4>4. Extra Puffs Logged</h4>
+                <p>Shows list of extra puffs with timestamps and delete buttons. Puff counter reflects all deductions.</p>
+                <a href="wireframe-extra-puffs.html" target="_blank">View Wireframe →</a>
+            </div>
+
+            <div class="wireframe-card">
+                <h4>5. Low Puff Warning</h4>
+                <p>Warning state when puffs ≤20. Orange/yellow colors throughout. Alerts users to order replacement.</p>
+                <a href="wireframe-low-warning.html" target="_blank">View Wireframe →</a>
+            </div>
+
+            <div class="wireframe-card">
+                <h4>6. Refill Confirmation</h4>
+                <p>Modal dialog for confirming inhaler refill. Prevents accidental resets.</p>
+                <a href="wireframe-refill-modal.html" target="_blank">View Wireframe →</a>
+            </div>
+
+            <div class="wireframe-card">
+                <h4>7. Toggle Interaction</h4>
+                <p>Shows detailed interaction logic for checking/unchecking doses and puff counter impact.</p>
+                <a href="wireframe-toggle-interaction.html" target="_blank">View Wireframe →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔄 Puff Counter Logic</h2>
+        <p><strong>This is the most critical feature - accuracy is required at all times</strong></p>
+        
+        <h3>Decrement Rules (subtract 1 puff):</h3>
+        <ul>
+            <li>Morning dose checked → -1 puff</li>
+            <li>Evening dose checked → -1 puff</li>
+            <li>Extra puff logged → -1 puff</li>
+        </ul>
+
+        <h3>Increment Rules (add 1 puff back):</h3>
+        <ul>
+            <li>Morning dose unchecked → +1 puff</li>
+            <li>Evening dose unchecked → +1 puff</li>
+            <li>Extra puff deleted → +1 puff</li>
+        </ul>
+
+        <h3>Examples:</h3>
+        <div class="flow-diagram">Starting: 120 puffs
+↓ Morning dose given
+119 puffs
+↓ Evening dose given
+118 puffs
+↓ Extra puff logged (Brad squirmed)
+117 puffs
+↓ Realize morning dose was actually not given, uncheck it
+118 puffs
+↓ Actually give morning dose, check it
+117 puffs</div>
+    </div>
+
+    <div class="section">
+        <h2>📱 Mobile-First Design Principles</h2>
+        <ul>
+            <li><strong>Touch targets:</strong> All interactive elements minimum 44x44px (checkboxes shown as 40x40px in wireframes)</li>
+            <li><strong>Card layout:</strong> Distinct sections separated by cards for visual clarity</li>
+            <li><strong>Single column:</strong> All content stacks vertically for mobile readability</li>
+            <li><strong>Large typography:</strong> Important numbers (puff count) are prominently displayed</li>
+            <li><strong>Color coding:</strong> Green = completed, Yellow/Orange = warning, White = pending</li>
+            <li><strong>Minimal scrolling:</strong> Most important info (doses, puff count) above the fold</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🎨 Visual Design Notes</h2>
+        <h3>Color Scheme (Abyssinian-inspired):</h3>
+        <ul>
+            <li><strong>Primary:</strong> Warm tones (cinnamon, rust, amber)</li>
+            <li><strong>Success:</strong> Green (#28a745)</li>
+            <li><strong>Warning:</strong> Orange/Yellow (#ff6b00, #ffc107)</li>
+            <li><strong>Neutral:</strong> Grays for borders and backgrounds</li>
+        </ul>
+
+        <h3>Cat Photo Integration:</h3>
+        <ul>
+            <li>Placeholder shown in header (80x80px)</li>
+            <li>Should be circular or rounded square</li>
+            <li>Adds personality without interfering with functionality</li>
+            <li>Consider making it tappable to show full-size photo</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔧 Technical Requirements Summary</h2>
+        <table>
+            <tr>
+                <th>Requirement</th>
+                <th>Implementation</th>
+            </tr>
+            <tr>
+                <td>Real-time sync</td>
+                <td>Supabase real-time subscriptions</td>
+            </tr>
+            <tr>
+                <td>Data persistence</td>
+                <td>Supabase PostgreSQL database</td>
+            </tr>
+            <tr>
+                <td>Framework</td>
+                <td>SvelteKit (Svelte 5)</td>
+            </tr>
+            <tr>
+                <td>Hosting</td>
+                <td>Vercel</td>
+            </tr>
+            <tr>
+                <td>Daily reset</td>
+                <td>Client-side check on load + optional Supabase cron</td>
+            </tr>
+            <tr>
+                <td>Conflict resolution</td>
+                <td>Last write wins (acceptable for this use case)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>✅ User Acceptance Criteria</h2>
+        <ul>
+            <li>✓ Both users see updates within 1 second of changes</li>
+            <li>✓ Puff counter is always accurate across all operations</li>
+            <li>✓ No duplicate doses given due to lack of coordination</li>
+            <li>✓ Warning appears when ≤20 puffs remaining</li>
+            <li>✓ Interface usable during stressful moments (uncooperative cat)</li>
+            <li>✓ Refill confirmation prevents accidental resets</li>
+            <li>✓ Works reliably on iPhone Safari and other mobile browsers</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>❓ Questions Addressed</h2>
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Answer</th>
+            </tr>
+            <tr>
+                <td>Backend for real-time sync?</td>
+                <td>Supabase - PostgreSQL with real-time subscriptions</td>
+            </tr>
+            <tr>
+                <td>Handle simultaneous updates?</td>
+                <td>Last write wins. Acceptable given low conflict probability and simple operations.</td>
+            </tr>
+            <tr>
+                <td>Refill confirmation?</td>
+                <td>Yes - modal dialog shows current vs. new count, requires explicit confirmation (see wireframe 6)</td>
+            </tr>
+            <tr>
+                <td>Historical tracking?</td>
+                <td>Phase 1: Current day only. Extra puffs log provides some history. Future: could add daily completion history.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🚀 Next Steps</h2>
+        <ol>
+            <li>Review wireframes with stakeholders</li>
+            <li>Set up Supabase project and get credentials</li>
+            <li>Initialize SvelteKit project</li>
+            <li>Create database schema in Supabase</li>
+            <li>Implement core functionality following wireframe specifications</li>
+            <li>Test real-time sync between two devices</li>
+            <li>Add Abyssinian color scheme and Brad's photo</li>
+            <li>Deploy to Vercel</li>
+            <li>User acceptance testing</li>
+        </ol>
+    </div>
+</body>
+</html>

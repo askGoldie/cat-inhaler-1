@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Extra Puffs Logged</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f5f5;
+            padding: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .wireframe-label {
+            background: #000;
+            color: #fff;
+            padding: 8px 16px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        .header {
+            text-align: center;
+            padding: 24px 16px;
+            background: #ddd;
+            margin-bottom: 16px;
+            border: 2px dashed #999;
+        }
+        .cat-image-placeholder {
+            width: 80px;
+            height: 80px;
+            background: #ccc;
+            margin: 0 auto 12px;
+            border: 2px dashed #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .card {
+            background: #fff;
+            border: 2px solid #999;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #999;
+            padding-bottom: 8px;
+        }
+        .status-banner {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 16px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #155724;
+        }
+        .dose-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border: 2px solid #999;
+            margin-bottom: 12px;
+        }
+        .dose-item.completed {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        .dose-info {
+            flex: 1;
+        }
+        .dose-label {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .dose-status {
+            color: #666;
+            font-size: 14px;
+        }
+        .dose-status.completed-time {
+            color: #155724;
+            font-weight: 500;
+        }
+        .checkbox {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #999;
+            border-radius: 50%;
+        }
+        .checkbox.checked {
+            background: #28a745;
+            border-color: #28a745;
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: '✓';
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .button {
+            background: #ddd;
+            border: 2px solid #999;
+            padding: 12px 24px;
+            font-size: 14px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .puff-counter {
+            text-align: center;
+            padding: 32px 0;
+        }
+        .puff-number {
+            font-size: 72px;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .puff-label {
+            color: #666;
+            margin-top: 8px;
+        }
+        .refill-section {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 2px dashed #999;
+        }
+        .refill-label {
+            font-weight: bold;
+        }
+        .refill-input {
+            width: 80px;
+            padding: 8px;
+            border: 2px solid #999;
+            font-size: 16px;
+        }
+        .refill-button {
+            background: #ddd;
+            border: 2px solid #999;
+            padding: 8px 24px;
+            font-size: 14px;
+        }
+        .puff-log {
+            margin-top: 16px;
+        }
+        .puff-log-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            border: 2px solid #999;
+            margin-bottom: 8px;
+            background: #fff9e6;
+        }
+        .puff-time {
+            font-size: 14px;
+            color: #666;
+        }
+        .delete-button {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            padding: 6px 12px;
+            font-size: 12px;
+            color: #721c24;
+        }
+        .note {
+            background: #ffffcc;
+            border: 2px dashed #999;
+            padding: 12px;
+            margin-top: 24px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-label">STATE: Extra Puffs Logged (User Flow 2)</div>
+
+    <div class="header">
+        <div class="cat-image-placeholder">🐱 Brad's Photo</div>
+        <h1>Brad's Asthma Tracker</h1>
+        <div>Friday, December 26, 2025</div>
+    </div>
+
+    <div class="status-banner">
+        ✓ All doses completed
+    </div>
+
+    <div class="card">
+        <div class="card-title">Daily Doses</div>
+        
+        <div class="dose-item completed">
+            <div class="dose-info">
+                <div class="dose-label">Morning Dose</div>
+                <div class="dose-status completed-time">Completed at 8:03 AM</div>
+            </div>
+            <div class="checkbox checked"></div>
+        </div>
+
+        <div class="dose-item completed">
+            <div class="dose-info">
+                <div class="dose-label">Evening Dose</div>
+                <div class="dose-status completed-time">Completed at 6:15 PM</div>
+            </div>
+            <div class="checkbox checked"></div>
+        </div>
+
+        <button class="button" style="margin-top: 16px;">Reset Day</button>
+    </div>
+
+    <div class="card">
+        <div class="puff-counter">
+            <div class="puff-number">115</div>
+            <div class="puff-label">puffs remaining</div>
+        </div>
+
+        <div class="refill-section">
+            <div class="refill-label">Refill Inhaler</div>
+            <input type="number" class="refill-input" value="120">
+            <button class="refill-button">Refill</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Extra Puffs</div>
+        <button class="button">+ Log Extra Puff</button>
+        
+        <div class="puff-log">
+            <div class="puff-log-item">
+                <div class="puff-time">Today at 6:17 PM</div>
+                <button class="delete-button">Delete</button>
+            </div>
+            <div class="puff-log-item">
+                <div class="puff-time">Today at 2:45 PM</div>
+                <button class="delete-button">Delete</button>
+            </div>
+            <div class="puff-log-item">
+                <div class="puff-time">Today at 8:05 AM</div>
+                <button class="delete-button">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>WIREFRAME NOTE:</strong> Three extra puffs have been logged (Brad was uncooperative). 
+        Puff counter: 120 - 2 doses - 3 extra = 115 remaining. Most recent puffs at top. 
+        Delete button in case puff was logged by mistake (adds 1 back to counter).
+    </div>
+</body>
+</html>
