@@ -126,7 +126,11 @@
 	<!-- Header -->
 	<header class="header">
 		<div class="cat-photo">
-			<div class="cat-placeholder">🐱</div>
+			<img
+				src="/brad.png"
+				alt="Brad the Cat"
+				class="cat-image"
+			/>
 		</div>
 		<h1>Brad's Asthma Tracker</h1>
 		<div class="date">{formatDate()}</div>
